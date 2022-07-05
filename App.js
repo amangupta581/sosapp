@@ -1,20 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 
-export default function App() {
+// import { StackNavigator } from 'react-navigation';
+import Login from './src/components/login/login';
+import Home from './src/components/home/home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+
+
+export default function MyStack() {
+  // return (
+  //   <View>
+
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //     <Text>uh</Text>
+  //   </View>
+  // )
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+// export default class App extends React.Component {
+//   render() {
+//     return <View><Text>Hi</Text></View>
+//   }
+// }
+// const AppNavigator = StackNavigator({
+//   Login: { screen: Login },
+//   Home: { screen: Home },
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// });
